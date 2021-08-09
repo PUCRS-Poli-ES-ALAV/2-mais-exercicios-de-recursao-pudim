@@ -24,4 +24,15 @@ public class Recursion {
         }
         return n + somatory(n-1);
     }
+
+    public static int fibonacci (int n)throws IllegalArgumentException{
+        if (n < 0){
+            throw new IllegalArgumentException("Negative numbers aren't allowed");
+        }
+        if (n == 0 || n == 1 ){
+            return n;
+        }
+            
+        return  fibonacci(n -1) + fibonacci(n -2);
+    }
 }
