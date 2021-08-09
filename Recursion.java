@@ -32,4 +32,21 @@ public class Recursion {
         }
         return  fibonacci(n - 1) + fibonacci(n - 2);
     }
+    public static boolean palindrome (String word){
+        if(word.equals("")){
+            return false;
+        }
+        word = word.toLowerCase();
+        return palindrome(word, 0, word.length() - 1);
+    }
+    private static boolean palindrome(String word, int i, int j){
+        if(i == j){
+            return true;
+        }
+        if(word.charAt(i) != word.charAt(j)){
+            return false;
+        }
+        
+        return palindrome(word, i + 1, j - 1);
+    }
 }
